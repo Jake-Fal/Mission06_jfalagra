@@ -5,14 +5,21 @@
 
 
 @model AddMovieModel;
-
 <h1>Add Movie</h1>
 
 
 
 <form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="MovieId" type="hidden" />
     <label> Category:</label>
-    <input type="text" asp-for="Category" name="category"> <br />
+    <select asp-for="CategoryID">
+        <option value="">Select a Category</option>
+        @foreach (Genre g in ViewBag.Genre)
+            {
+                <option value=" @g.CategoryID">@g.CategoryName</option>
+            }
+    </select> <br />
     <label> Title:</label>
     <input type="text" asp-for="Title" name="title"> <br />
     <label> Year:</label>
