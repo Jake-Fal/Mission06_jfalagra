@@ -12,6 +12,8 @@ namespace Mission06_jfalagra.Models
         [Required]
         public int MovieId { get; set; }
         [Required]
+        public string Category { get; set; }
+        [Required]
         public string Title { get; set; }
         [Required]
         public ushort Year { get; set; }
@@ -23,10 +25,5 @@ namespace Mission06_jfalagra.Models
         public bool Edited { get; set; }
         public string Lent_To { get; set; }
         public string Notes { get; set; }
-
-        [Required]
-        public int CategoryID { get; set; }
-        public Genre Genres { get; set; }
     }
-
 }
